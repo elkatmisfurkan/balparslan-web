@@ -1,13 +1,13 @@
 /* ==========================================================================
-   1. GENEL AYARLAR VE DEĞİŞKENLER (CSS VARIABLES)
+   1. GENEL AYARLAR VE DEĞİŞKENLER
    ========================================================================== */
 :root {
-    --primary-color: #cfa717; /* Bal Sarısı */
-    --primary-dark: #a88712;  /* Koyu Bal Sarısı */
-    --text-color: #333333;    /* Ana Metin Rengi */
-    --text-light: #666666;    /* İkincil Metin Rengi */
-    --bg-light: #fdfbf7;      /* Sıcak Kırık Beyaz (Doğallık hissi için) */
-    --bg-dark: #1a1a1a;       /* Koyu Antrasit (Asalet ve kontrast için) */
+    --primary-color: #cfa717;
+    --primary-dark: #a88712;
+    --text-color: #333333;
+    --text-light: #666666;
+    --bg-light: #fdfbf7;
+    --bg-dark: #1a1a1a;
     --font-heading: 'Lora', serif;
     --font-body: 'Inter', sans-serif;
 }
@@ -19,7 +19,7 @@
 }
 
 html {
-    scroll-behavior: smooth; /* Menüye tıklandığında yumuşak kaydırma */
+    scroll-behavior: smooth;
 }
 
 body {
@@ -41,7 +41,7 @@ ul {
 }
 
 /* ==========================================================================
-   2. YENİDEN KULLANILABİLİR ARAÇLAR (UTILITIES)
+   2. YENİDEN KULLANILABİLİR ARAÇLAR
    ========================================================================== */
 .container {
     max-width: 1200px;
@@ -76,7 +76,6 @@ ul {
     margin: 0;
 }
 
-/* Buton Tasarımları */
 .btn-primary {
     display: inline-block;
     padding: 12px 30px;
@@ -119,44 +118,25 @@ ul {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: var(--bg-dark);
+    background-color: var(--bg-light); 
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 9999;
-    transition: opacity 0.8s ease, visibility 0.8s ease;
+    transition: opacity 1.2s ease, visibility 1.2s ease;
 }
 
-.honeycomb {
-    position: relative;
-    width: 100px;
-    height: 100px;
+.preloader-logo {
+    animation: logo-pulse 2s infinite ease-in-out;
 }
 
-.honeycomb div {
-    width: 30px;
-    height: 30px;
-    background-color: var(--primary-color);
-    position: absolute;
-    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-    animation: honeycomb-pulse 1.5s infinite ease-in-out;
-}
-
-.honeycomb div:nth-child(1) { top: 0; left: 35px; animation-delay: 0s; }
-.honeycomb div:nth-child(2) { top: 30px; left: 18px; animation-delay: 0.1s; }
-.honeycomb div:nth-child(3) { top: 30px; left: 52px; animation-delay: 0.2s; }
-.honeycomb div:nth-child(4) { top: 60px; left: 0; animation-delay: 0.3s; }
-.honeycomb div:nth-child(5) { top: 60px; left: 35px; animation-delay: 0.4s; }
-.honeycomb div:nth-child(6) { top: 60px; left: 70px; animation-delay: 0.5s; }
-.honeycomb div:nth-child(7) { top: 90px; left: 35px; animation-delay: 0.6s; }
-
-@keyframes honeycomb-pulse {
-    0%, 100% { transform: scale(1); opacity: 1; }
-    50% { transform: scale(0.8); opacity: 0.5; }
+@keyframes logo-pulse {
+    0%, 100% { transform: scale(1); opacity: 0.8; }
+    50% { transform: scale(1.05); opacity: 1; }
 }
 
 /* ==========================================================================
-   4. ÜST MENÜ (NAVBAR) & LOGO
+   4. ÜST MENÜ (NAVBAR)
    ========================================================================== */
 .navbar {
     position: fixed;
@@ -179,29 +159,25 @@ ul {
     align-items: center;
 }
 
-/* Logo Tasarımı */
+/* Sayfa ilk açıldığında şeffaf menü üzerindeki metin logosunun rengi Siyah yapıldı */
 .logo {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--bg-dark); /* Renk siyah oldu */
     display: flex;
     align-items: center;
-    transition: transform 0.4s ease;
-    color: #fff;
+    transition: color 0.4s ease;
+    /* Dağların üzerine denk gelirse okunsun diye hafif beyaz parlama eklendi */
+    text-shadow: 0px 0px 10px rgba(255,255,255,0.8);
 }
 
+/* Sayfa aşağı kayıp arka planı beyazlayınca beyaz parlama kalkar */
 .navbar.scrolled .logo {
     color: var(--bg-dark);
+    text-shadow: none;
 }
 
-.logo img {
-    max-height: 50px; /* Logonun Boyutu */
-    width: auto;
-    transition: opacity 0.3s ease;
-}
-
-.logo:hover {
-    transform: scale(1.02);
-}
-
-/* Logo Yanı İnce Slogan */
 .logo-slogan {
     font-family: var(--font-body);
     font-size: 0.8rem;
@@ -217,16 +193,20 @@ ul {
     gap: 30px;
 }
 
+/* Sayfa ilk açıldığında linklerin rengi de Siyah yapıldı */
 .nav-links a {
-    color: #fff;
+    color: var(--bg-dark); /* Renk siyah oldu */
     font-weight: 500;
     font-size: 1rem;
     position: relative;
     transition: color 0.4s ease;
+    text-shadow: 0px 0px 10px rgba(255,255,255,0.8);
 }
 
+/* Sayfa aşağı kayınca beyaz parlama kalkar */
 .navbar.scrolled .nav-links a {
     color: var(--text-color);
+    text-shadow: none;
 }
 
 .nav-links a:hover {
@@ -249,35 +229,41 @@ ul {
 }
 
 /* ==========================================================================
-   5. ANA EKRAN (HERO SECTION)
+   5. ANA EKRAN (HERO SECTION) VE YENİ BUTON DÜZENİ
    ========================================================================== */
 .hero-section {
     height: 100vh;
     background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    background-position: left center; 
+    position: relative; /* Butonu en alta sabitlemek için eklendi */
+}
+
+.hero-content {
+    /* Butonu sayfanın en altına ve ortasına sabitliyoruz */
+    position: absolute;
+    bottom: 60px; /* Ekranın altından yüksekliği */
+    left: 0;
+    width: 100%;
     text-align: center;
-    color: #fff;
-    padding-top: 80px;
+    padding: 0;
+    margin: 0; 
 }
 
-.hero-content h1 {
-    font-family: var(--font-heading);
-    font-size: 4.5rem;
-    line-height: 1.2;
-    margin-bottom: 10px;
-    text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+/* Tıkla ve aşağı in hissini vermek için butona hafif bir zıplama efekti eklendi */
+.hero-content .btn-primary {
+    animation: bounce 2s infinite;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
 
-.hero-slogan {
-    font-size: 1.8rem;
-    font-style: italic;
-    margin-bottom: 40px;
-    color: #f1f1f1;
-    font-family: var(--font-heading);
+.hero-content .btn-primary:hover {
+    animation: none;
+    transform: translateY(-3px);
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-10px); }
+    60% { transform: translateY(-5px); }
 }
 
 /* ==========================================================================
@@ -313,7 +299,7 @@ ul {
 }
 
 /* ==========================================================================
-   7. KRİTERLERİMİZ (NE VAR? NE YOK?)
+   7. KRİTERLERİMİZ
    ========================================================================== */
 .section-criteria {
     padding: 100px 0;
@@ -504,7 +490,7 @@ ul {
 
 .contact-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 30px;
     text-align: center;
 }
@@ -559,29 +545,19 @@ ul {
     font-size: 0.9rem;
 }
 
-.footer a {
-    transition: color 0.3s ease;
-}
-
-.footer a:hover {
-    color: #fff !important;
-}
-
 /* ==========================================================================
    12. MOBİL UYUM (RESPONSIVE TASARIM)
    ========================================================================== */
 @media (max-width: 992px) {
-    .logo-slogan { display: none; } /* Tablete düştüğünde slogan gizlenir ki menü sıkışmasın */
-    .hero-content h1 { font-size: 3.5rem; }
+    .logo-slogan { display: none; } 
     .criteria-container { grid-template-columns: 1fr; }
-    .criteria-image { order: -1; } /* Resmi Mobilde Üste Alır */
+    .criteria-image { order: -1; } 
 }
 
 @media (max-width: 768px) {
-    .nav-links { display: none; } /* Mobilde menüyü gizle (Hamburger menü JS ile eklenebilir) */
-    .hero-content h1 { font-size: 2.8rem; }
-    .hero-slogan { font-size: 1.3rem; }
+    .nav-links { display: none; } 
+    /* Mobilde de en alta hizalı kalması için ufak düzenleme */
+    .hero-content { bottom: 40px; } 
     .criteria-lists { grid-template-columns: 1fr; }
-    .contact-grid { grid-template-columns: 1fr; }
     .section-title h2 { font-size: 2rem; }
 }

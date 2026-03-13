@@ -9,31 +9,26 @@ document.addEventListener("DOMContentLoaded", () => {
     const preloader = document.getElementById('preloader');
     
     window.addEventListener('load', () => {
-        // Ziyaretçiye petek animasyonunu kısa bir süre gösterebilmek için 500ms (yarım saniye) gecikme ekliyoruz.
+        // Yükleme süresi 1200ms (1.2 saniye) yapılarak daha yavaş ve şık bir giriş sağlandı
         setTimeout(() => {
             if (preloader) {
                 preloader.style.opacity = '0';
                 preloader.style.visibility = 'hidden';
             }
-        }, 500);
+        }, 1200); 
     });
 
-    /* 2. HAREKETLİ ÜST MENÜ (STICKY NAVBAR) VE LOGO DEĞİŞİM EFEKTİ
-       Sayfa aşağı kaydırıldığında menünün arka planının belirginleşmesini ve logonun renklenmesini sağlar. */
+    /* 2. HAREKETLİ ÜST MENÜ (STICKY NAVBAR) EFEKTİ
+       Sayfa aşağı kaydırıldığında menünün arka planının beyazlaşmasını sağlar. */
     const navbar = document.getElementById('navbar');
-    const brandLogo = document.getElementById('brand-logo'); // Logoyu seçiyoruz
     
     window.addEventListener('scroll', () => {
-        // Sayfa 50 pikselden fazla aşağı kaydırıldıysa
+        // Sayfa 50 pikselden fazla aşağı kaydırıldıysa beyaz arka planı (scrolled sınıfını) ekle
         if (window.scrollY > 50) {
             if (navbar) navbar.classList.add('scrolled');
-            // Menü beyazlayınca sarı-siyah logoya geç
-            if (brandLogo) brandLogo.src = 'assets/icons/sarısiyah-logo.svg'; 
         } else {
-            // En üste dönüldüğünde
+            // En üste dönüldüğünde şeffaf hale geri dön
             if (navbar) navbar.classList.remove('scrolled');
-            // Arka plan karanlıkken siyah-beyaz (açık renk) logoya geri dön
-            if (brandLogo) brandLogo.src = 'assets/icons/siyahbeyaz-logo.svg'; 
         }
     });
 
