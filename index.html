@@ -18,24 +18,22 @@
 
     <div id="preloader">
         <div class="honeycomb">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
+            <div></div><div></div><div></div><div></div><div></div><div></div><div></div>
         </div>
     </div>
 
     <nav class="navbar" id="navbar">
         <div class="container nav-container">
-            <a href="#home" class="logo">Balparslan</a>
+            <a href="#home" class="logo">
+                <img id="brand-logo" src="assets/icons/siyahbeyaz-logo.svg" alt="Balparslan Logo">
+                <span class="logo-slogan">Analizli &bull; Sınırlı Üretim &bull; Gerçek Bal</span>
+            </a>
             <ul class="nav-links">
                 <li><a href="#home">Ana Sayfa</a></li>
                 <li><a href="#hikayemiz">Hikayemiz</a></li>
                 <li><a href="#kriterlerimiz">Kriterlerimiz</a></li>
-                <li><a href="#ballarimiz">Ballarımız</a></li>
+                <li><a href="#degerlerimiz">Değerlerimiz</a></li>
+                <li><a href="#ballarimiz">Analizli Ballarımız</a></li>
                 <li><a href="#iletisim">İletişim</a></li>
             </ul>
         </div>
@@ -43,7 +41,7 @@
 
     <header id="home" class="hero-section" style="background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('assets/img/hero.png');">
         <div class="container hero-content">
-            <h1>Balparslan Doğal Arı Ürünleri</h1>
+            <h1>Balparslan</h1>
             <p class="hero-slogan">Gerçek balın izinde</p>
             <a href="#hikayemiz" class="btn-primary">Hikayemizi Keşfedin</a>
         </div>
@@ -61,7 +59,7 @@
                 <p>Bingöl, Muş ve Bitlis yaylalarında her renk ve her fiyatta bal satıldığını gören aile, balın gerçekliğini sorgulamaya başladı. Çünkü doğanın sunduğu bu kadim gıdanın değerinin ancak doğallığı ve saflığıyla anlam kazandığını biliyorlardı.</p>
                 <p>Bu merak zamanla bir arayışa, arayış ise emeğe dönüştü. Hobi olarak başlayan arıcılık sürecinde, balın gerçekliğinin ancak akredite laboratuvarlarda yapılan bilimsel analizlerle anlaşılabileceğini fark ettiler. Böylece Balparslan’ın hikâyesi, gerçek balı arama ve üretme çabasına dönüştü.</p>
                 <p>Yıllar içinde ürettikleri bal çevrelerinde çok sevildi. Bu süreçte ailenin bir oğlu dünyaya geldi ve adını Alparslan koydular. Bir gün anneanne torununu severken ona sevgiyle “Balparslan” diye seslendi. Böylece markanın adı da doğmuş oldu.</p>
-                <p>Bugün Balparslan; Doğu Anadolu’nun yüksek rakımlı, güneşe yakın, insana uzak ve zengin bitki örtüsüne sahip yaylalarında geleneksel yöntemlerle üretilen ballardan oluşur.</p>
+                <p>Bugün Balparslan; Doğu Anadolu’nun yüksek rakımlı, güneşe yakın, insana uzak ve zengin bitki örtüsüne sahip yaylalarında geleneksel yöntemlerle ürettiği hakiki balı sizinle buluşturuyor.</p>
             </div>
         </div>
     </section>
@@ -108,10 +106,41 @@
         </div>
     </section>
 
+    <section id="degerlerimiz" class="section-values">
+        <div class="container">
+            <div class="section-title">
+                <h2>Değerlerimiz</h2>
+                <div class="divider"></div>
+            </div>
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon"><i class="fa-solid fa-flask"></i></div>
+                    <h3>Bilimsellik ve Güven</h3>
+                    <p>Her damla balımız, akredite laboratuvarlarda test edilerek analiz raporlarıyla doğrulanır.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon"><i class="fa-solid fa-leaf"></i></div>
+                    <h3>Saflık ve Doğallık</h3>
+                    <p>Doğanın bize sunduğunu hiçbir katkı maddesi eklemeden, en saf haliyle kavanozlara taşıyoruz.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon"><i class="fa-solid fa-medal"></i></div>
+                    <h3>Üstün Kalite ve Seçicilik</h3>
+                    <p>Sadece yüksek rakımlı yaylaların en özel ve kaliteli ballarını seçerek butik üretim yapıyoruz.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon"><i class="fa-solid fa-clock-rotate-left"></i></div>
+                    <h3>Gelenek ve Kültür</h3>
+                    <p>Doğu Anadolu'nun kadim arıcılık geleneklerine saygı duyarak, arının ritmine müdahale etmiyoruz.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="ballarimiz" class="section-products" style="background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url('assets/img/backend.png');">
         <div class="container">
             <div class="section-title">
-                <h2>Ballarımız</h2>
+                <h2>Analizli Ballarımız</h2>
                 <div class="divider"></div>
             </div>
             
@@ -131,7 +160,7 @@
                         </ul>
                     </div>
                     <div class="product-footer">
-                        <a href="#analiz-bitlis" class="btn-secondary">Analiz sonuçlarına ulaşmak için tıklayınız…</a>
+                        <a href="assets/file/bitlis_analiz.pdf" target="_blank" class="btn-secondary">Analiz sonuçlarına ulaşmak için tıklayınız…</a>
                     </div>
                 </div>
 
@@ -149,7 +178,7 @@
                         </ul>
                     </div>
                     <div class="product-footer">
-                        <a href="#analiz-bingol" class="btn-secondary">Analiz sonuçlarına ulaşmak için tıklayınız…</a>
+                        <a href="assets/file/bingol_analiz.pdf" target="_blank" class="btn-secondary">Analiz sonuçlarına ulaşmak için tıklayınız…</a>
                     </div>
                 </div>
 
@@ -170,7 +199,7 @@
                         <i class="fa-solid fa-location-dot"></i>
                     </div>
                     <h4>Adres</h4>
-                    <p>MAUN Çarşı, No 15, Üniversite Kampüsü<br>Merkez, Muş</p>
+                    <p>MAUN Çarşı, No 15, Üniversite Kampüsü<br>Merkez, Muş, Türkiye, 49125</p>
                 </div>
 
                 <div class="contact-item">
@@ -195,6 +224,9 @@
     <footer class="footer">
         <div class="container">
             <p>&copy; 2026 Balparslan Doğal Arı Ürünleri. Tüm hakları saklıdır.</p>
+            <p style="margin-top: 10px; font-size: 0.8em; opacity: 0.7;">
+                İnstagram: <a href="https://instagram.com/Balparslan.bal" target="_blank" style="color: #cfa717;">@Balparslan.bal</a>
+            </p>
         </div>
     </footer>
 

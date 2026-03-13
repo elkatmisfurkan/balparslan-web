@@ -11,22 +11,29 @@ document.addEventListener("DOMContentLoaded", () => {
     window.addEventListener('load', () => {
         // Ziyaretçiye petek animasyonunu kısa bir süre gösterebilmek için 500ms (yarım saniye) gecikme ekliyoruz.
         setTimeout(() => {
-            preloader.style.opacity = '0';
-            preloader.style.visibility = 'hidden';
+            if (preloader) {
+                preloader.style.opacity = '0';
+                preloader.style.visibility = 'hidden';
+            }
         }, 500);
     });
 
-    /* 2. HAREKETLİ ÜST MENÜ (STICKY NAVBAR) EFEKTİ
-       Sayfa aşağı kaydırıldığında menünün arka planının belirginleşmesini sağlar. */
+    /* 2. HAREKETLİ ÜST MENÜ (STICKY NAVBAR) VE LOGO DEĞİŞİM EFEKTİ
+       Sayfa aşağı kaydırıldığında menünün arka planının belirginleşmesini ve logonun renklenmesini sağlar. */
     const navbar = document.getElementById('navbar');
+    const brandLogo = document.getElementById('brand-logo'); // Logoyu seçiyoruz
     
     window.addEventListener('scroll', () => {
-        // Sayfa 50 pikselden fazla aşağı kaydırıldıysa 'scrolled' sınıfını ekle
+        // Sayfa 50 pikselden fazla aşağı kaydırıldıysa
         if (window.scrollY > 50) {
-            navbar.classList.add('scrolled');
+            if (navbar) navbar.classList.add('scrolled');
+            // Menü beyazlayınca sarı-siyah logoya geç
+            if (brandLogo) brandLogo.src = 'assets/icons/sarısiyah-logo.svg'; 
         } else {
-            // En üste dönüldüğünde sınıfı kaldır (şeffaf hale geri dön)
-            navbar.classList.remove('scrolled');
+            // En üste dönüldüğünde
+            if (navbar) navbar.classList.remove('scrolled');
+            // Arka plan karanlıkken siyah-beyaz (açık renk) logoya geri dön
+            if (brandLogo) brandLogo.src = 'assets/icons/siyahbeyaz-logo.svg'; 
         }
     });
 
