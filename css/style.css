@@ -2,7 +2,7 @@
    1. GENEL AYARLAR VE DEĞİŞKENLER
    ========================================================================== */
 :root {
-    --primary-color: #cfa717;
+    --primary-color: #cfa717; /* Bal Sarısı */
     --primary-dark: #a88712;
     --text-color: #333333;
     --text-light: #666666;
@@ -41,7 +41,7 @@ ul {
 }
 
 /* ==========================================================================
-   2. YENİDEN KULLANILABİLİR ARAÇLAR (UTILITIES)
+   2. YENİDEN KULLANILABİLİR ARAÇLAR
    ========================================================================== */
 .container {
     max-width: 1200px;
@@ -54,38 +54,28 @@ ul {
     margin-bottom: 50px;
 }
 
-.section-title.left-align {
-    text-align: left;
-}
-
 .section-title h2 {
     font-family: var(--font-heading);
     font-size: 2.5rem;
     color: var(--bg-dark);
-    margin-bottom: 10px;
 }
 
 .divider {
     height: 3px;
     width: 60px;
     background-color: var(--primary-color);
-    margin: 0 auto;
-}
-
-.section-title.left-align .divider {
-    margin: 0;
+    margin: 10px auto;
 }
 
 .btn-primary {
     display: inline-block;
-    padding: 12px 30px;
+    padding: 12px 35px;
     background-color: var(--primary-color);
     color: #fff;
     font-weight: 500;
     border-radius: 30px;
-    font-family: var(--font-body);
     transition: transform 0.3s ease, background-color 0.3s ease;
-    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
 .btn-primary:hover {
@@ -102,7 +92,7 @@ ul {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: var(--bg-light); 
+    background-color: var(--bg-light);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -128,7 +118,7 @@ ul {
     width: 100%;
     padding: 25px 0;
     z-index: 1000;
-    transition: background-color 0.4s ease, padding 0.4s ease, box-shadow 0.4s ease;
+    transition: background-color 0.4s ease, padding 0.4s ease;
 }
 
 .navbar.scrolled {
@@ -147,11 +137,10 @@ ul {
     font-family: var(--font-heading);
     font-size: 1.8rem;
     font-weight: 600;
-    color: var(--bg-dark); /* Güneşe karşı net okunması için siyah yapıldı */
+    color: var(--bg-dark); /* Güneşe karşı siyah yapıldı */
     display: flex;
     align-items: center;
-    transition: color 0.4s ease;
-    text-shadow: 0px 0px 8px rgba(255,255,255,0.7);
+    text-shadow: 0px 0px 10px rgba(255,255,255,0.8);
 }
 
 .logo-slogan {
@@ -160,7 +149,6 @@ ul {
     font-weight: 300;
     letter-spacing: 1px;
     margin-left: 15px;
-    opacity: 0.8;
     text-transform: uppercase;
 }
 
@@ -170,12 +158,9 @@ ul {
 }
 
 .nav-links a {
-    color: var(--bg-dark); /* Linkler de siyah yapıldı */
+    color: var(--bg-dark); /* Yazılar siyah yapıldı */
     font-weight: 500;
-    font-size: 1rem;
-    position: relative;
-    transition: color 0.4s ease;
-    text-shadow: 0px 0px 8px rgba(255,255,255,0.7);
+    text-shadow: 0px 0px 10px rgba(255,255,255,0.8);
 }
 
 .nav-links a:hover {
@@ -184,24 +169,22 @@ ul {
 
 /* ==========================================================================
    5. ANA EKRAN (HERO SECTION)
-   ========================================================================== */
+   ========================================================================= */
 .hero-section {
     height: 100vh;
     background-size: cover;
-    background-position: center center; /* Masaüstünde ortalar */
+    background-position: center center;
     background-repeat: no-repeat;
     position: relative;
     display: flex;
-    flex-direction: column;
-    justify-content: flex-end; /* İçeriği (butonu) aşağı yaslar */
-    align-items: center;
-    padding-bottom: 60px; /* Butonun en alttan boşluğu */
+    justify-content: center;
+    align-items: flex-end; /* Butonu aşağı yaslar */
+    padding-bottom: 60px; /* Butonun yerden yüksekliği */
 }
 
-/* Tıkla ve aşağı in hissini vermek için butona hafif bir zıplama efekti */
+/* Buton Zıplama Animasyonu */
 .hero-content .btn-primary {
     animation: bounce 2s infinite;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
 }
 
 @keyframes bounce {
@@ -211,7 +194,7 @@ ul {
 }
 
 /* ==========================================================================
-   6. HİKAYEMİZ & DİĞER BÖLÜMLER
+   6. İÇERİK BÖLÜMLERİ (STORY, VALUES, PRODUCTS)
    ========================================================================== */
 .section-story, .section-criteria, .section-values, .section-products, .section-contact {
     padding: 100px 0;
@@ -223,20 +206,16 @@ ul {
     max-width: 800px;
     margin: 0 auto;
     font-size: 1.1rem;
-    color: var(--text-light);
+    text-align: center;
 }
 
 .story-quote {
     font-family: var(--font-heading);
     font-size: 1.8rem;
-    color: var(--bg-dark);
-    font-style: italic;
-    text-align: center;
     margin: 40px 0;
     padding: 20px;
     border-top: 2px solid var(--primary-color);
     border-bottom: 2px solid var(--primary-color);
-    background-color: var(--bg-light);
 }
 
 /* Kriterler Grid */
@@ -258,7 +237,7 @@ ul {
     border-radius: 12px;
 }
 
-/* Değerler & Ürünler */
+/* Değerler & Ürünler (Grid) */
 .values-grid, .products-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -290,7 +269,7 @@ ul {
 .icon-wrapper {
     font-size: 2rem;
     color: var(--primary-color);
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
 /* ==========================================================================
@@ -304,22 +283,21 @@ ul {
 }
 
 /* ==========================================================================
-   12. MOBİL UYUM (RESPONSIVE) - KRİTİK AYARLAR
+   12. MOBİL UYUM (RESPONSIVE) - SEÇENEK 2 UYGULAMASI
    ========================================================================== */
 @media (max-width: 992px) {
     .logo-slogan { display: none; }
-    .nav-links { gap: 15px; }
 }
 
 @media (max-width: 768px) {
-    /* MOBİL İÇİN ÖZEL RESİM AYARI */
+    /* KRİTİK AYAR: Mobilde dikey görseli çağırır */
     .hero-section {
-        /* Görselin telefonda kavanozu ve yazıyı ortalaması için sağa yaslıyoruz */
-        background-position: 75% center; 
+        background-image: url('../assets/img/hero-mobile.png') !important;
+        background-position: center center;
         padding-bottom: 40px;
     }
 
-    .nav-links { display: none; } /* Sade görünüm için mobilde linkleri gizle */
+    .nav-links { display: none; } /* Mobilde üst linkleri gizler */
     
     .hero-content .btn-primary {
         padding: 10px 25px;
