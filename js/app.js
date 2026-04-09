@@ -4,19 +4,7 @@
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    /* 1. YÜKLEME EKRANI (PRELOADER) KONTROLÜ
-       Sayfadaki tüm görseller ve metinler yüklendikten sonra çalışır. */
-    const preloader = document.getElementById('preloader');
 
-    window.addEventListener('load', () => {
-        // Yükleme süresi 1200ms (1.2 saniye) yapılarak daha yavaş ve şık bir giriş sağlandı
-        setTimeout(() => {
-            if (preloader) {
-                preloader.style.opacity = '0';
-                preloader.style.visibility = 'hidden';
-            }
-        }, 1200);
-    });
 
     /* 2. HAREKETLİ ÜST MENÜ (STICKY NAVBAR) EFEKTİ
        Sayfa aşağı kaydırıldığında menünün arka planının beyazlaşmasını sağlar. */
